@@ -1,0 +1,30 @@
+﻿<!DOCTYPE html>
+<html ng-app="MainModule">
+<head>
+    <title></title>
+	<meta charset="utf-8" />
+    <script src="Content/angular.min.js"></script>
+    <script src="Content/angular-ui-router.min.js"></script>
+    <script src="Content/angular-resource.min.js"></script>
+    <script src="Content/bootstrap.min.js"></script>
+    <script src="Content/lock-7.js"></script>
+    <script src="Content/auth0-angular.js"></script>
+    <script src="Scripts/Module.js"></script>
+    <script src="Scripts/Services/AuthService.js"></script>
+    <script src="Scripts/HomeController.js"></script>
+    <script src="Scripts/Services/HomeOwnerService.js"></script>
+    <script src="Scripts/Controllers/HomeOwnerController.js"></script>  
+    <script src="scripts/controllers/instructorcontroller.js"></script>
+    <script src="scripts/controllers/membercontroller.js"></script>
+    <script src="scripts/services/instructorservice.js"></script>
+    <script src="scripts/services/memberservice.js"></script>
+
+    <link href="Style/bootstrap.min.css" rel="stylesheet" />
+    <link href="Style/style.css" rel="stylesheet" />
+</head>
+<body ng-controller="HomeController as vm">
+    <div class="container-fluid main-content">
+        <div ui-view></div>
+    </div>
+</body>
+</html>

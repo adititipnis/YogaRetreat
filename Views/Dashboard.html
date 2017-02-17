@@ -1,0 +1,22 @@
+﻿<!DOCTYPE html>
+<html ng-app="MainModule">
+<head>
+    <title></title>
+    <meta charset="utf-8" />
+    <script src="../Content/angular.min.js"></script>
+    <script src="../Content/angular-ui-router.min.js"></script>
+    <script src="../Content/angular-resource.min.js"></script>
+    <script src="../Content/bootstrap.min.js"></script>
+    <script src="../Content/lock-7.js"></script>
+    <script src="../Content/auth0-angular-4.js"></script>
+    <script src="../Scripts/Module.js"></script>
+    <script src="../Scripts/Controllers/DashboardController.js"></script>
+
+    <link href="../Style/bootstrap.min.css" rel="stylesheet" />
+    <link href="../Style/style.css" rel="stylesheet" />
+</head>
+<body ng-controller="DashboardController as dash">
+    {{dash.message}} <br />
+    Welcome {{dash.auth.profile.user_metadata.FirstName}}!
+</body>
+</html>

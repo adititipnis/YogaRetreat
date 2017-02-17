@@ -1,0 +1,19 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+    <meta charset="utf-8" />
+</head>
+<body>
+    First Name <input type="text" class="form-control" ng-model="ho.currentUser.FirstName" /><br />
+    Last Name <input type="text" class="form-control" ng-model="ho.currentUser.LastName" /><br />
+    E-mail <input type="email" class="form-control" ng-model="ho.currentUser.Email" /><br />
+    Password <input type="password" class="form-control" ng-model="ho.currentUser.UserPassword.Password" /><br />
+    Confirm Password <input type="password" class="form-control" /><br />
+    <div id="regIframe">
+        <!-- The 0_kit SDK will load the iframe with the password input here -->
+    </div>
+    Holiday home adderess <br /><textarea class="form-control" ng-model="ho.currentUser.PropertyAddress" ></textarea>
+    <button class="btn btn-success btn-register" ng-click="ho.Add()">Register</button>
+</body>
+</html>

@@ -1,0 +1,19 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+    <meta charset="utf-8" />
+</head>
+<body>
+    First Name <input type="text" class="form-control" /><br />
+    Last Name <input type="text" class="form-control" /><br />
+    E-mail <input type="email" class="form-control" /><br />
+    Password <input type="password" class="form-control" /><br />
+    Confirm Password <input type="password" class="form-control" /><br />
+    Type of Instructor
+    <select class="form-control">
+        <option>-Select-</option>
+        <option ng-repeat="type in vm.instructorTypes">{{type}}</option>
+    </select>
+</body>
+</html>
