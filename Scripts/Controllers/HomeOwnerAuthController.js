@@ -1,5 +1,5 @@
 ﻿(function () {
-    angular.module("MainModule").controller("HomeOwnerController", ["HomeOwnerService", "AuthService", "$window", HomeOwnerController])
+    angular.module("AuthModule").controller("HomeOwnerController", ["HomeOwnerService", "AuthService", "$window", HomeOwnerController])
 
     function HomeOwnerController(HomeOwnerService, AuthService, $window) {
         ho = this;
@@ -15,9 +15,15 @@
         //}
 
         ho.Add = function () {
-            AuthService.authSignUp(ho.currentUser.Email, ho.currentUser.UserPassword.Password).then(
-            function(result) { 
-                doLogin();
+            AuthService.authSignUp(ho.currentUser.Email, ho.auth.currentUser.Password, "HomeOwner").then(
+            function (result) {
+                HomeOwnerService.save(ho.currentUser,
+                function (response) {
+                    doLogin();
+                },
+                function (error) {
+                    alert(JSON.stringify(error))
+                });
             },
             function (error) {
                 alert(JSON.stringify(error))
@@ -25,14 +31,15 @@
         };
 
         var onLoginSuccess = function (result) {
-            $window.location.href = '/Views/dashboard.html';
+            $window.location.href = '/Views/Dashboard/dashboard.html';
             localStorage.token = angular.toJson(result.data);
+            localStorage.currentUser = angular.toJson(ho.currentUser);
         };
 
         var doLogin = function (result) {
             //alert(JSON.stringify(result))
 
-            AuthService.authLogin(ho.currentUser.Email, ho.currentUser.UserPassword.Password).then(
+            AuthService.authLogin(ho.currentUser.Email, ho.auth.currentUser.Password).then(
             onLoginSuccess,
             function (error) {
                 alert(JSON.stringify(error));

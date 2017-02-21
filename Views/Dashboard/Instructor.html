@@ -1,0 +1,19 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+    <meta charset="utf-8" />
+</head>
+<body>
+    First Name <input type="text" class="form-control" ng-model="inst.currentUser.FirstName"/><br />
+    Last Name <input type="text" class="form-control" ng-model="inst.currentUser.LastName" /><br />
+    E-mail <input type="email" class="form-control" ng-model="inst.currentUser.Email" /><br />
+    Password <input type="password" class="form-control" ng-model="inst.auth.currentUser.Password" /><br />
+    Confirm Password <input type="password" class="form-control" /><br />
+    Type of Instructor
+    <select class="form-control" ng-model="inst.currentUser.Type">
+        <option ng-repeat="type in inst.instructorTypes">{{type}}</option>
+    </select>
+    <button class="btn btn-success btn-register" ng-click="inst.Add()">Register</button>
+</body>
+</html>

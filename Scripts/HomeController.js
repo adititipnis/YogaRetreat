@@ -1,5 +1,5 @@
 ﻿(function () {
-    angular.module("MainModule").controller("HomeController", [HomeController])
+    angular.module("AuthModule").controller("HomeController", [HomeController])
 
     function HomeController() {
         vm = this;

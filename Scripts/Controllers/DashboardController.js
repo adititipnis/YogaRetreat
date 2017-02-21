@@ -6,5 +6,6 @@
         dash.auth = auth;
         auth.getProfile(angular.fromJson(localStorage.token).id_token);
         dash.message = "Dashboard";
+        //dash.currentUser = angular.fromJson(localStorage.currentUser);
     }
 }());

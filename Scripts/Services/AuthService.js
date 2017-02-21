@@ -1,5 +1,5 @@
 ﻿(function () {
-    angular.module("MainModule").factory("AuthService", ["$http", AuthService]);
+    angular.module("AuthModule").factory("AuthService", ["$http", AuthService]);
 
     function AuthService($http) {
         var service = {
@@ -9,7 +9,7 @@
 
         return service;
 
-        function authSignUp(email, password) {
+        function authSignUp(email, password, userType) {
             return $http({
                 url: 'https://adititipnis.auth0.com/dbconnections/signup',
                 method: "POST",
@@ -21,6 +21,7 @@
                     client_id: 'xCURcvMJNaEAGE1biiljG85MOyT1Hq13',
                     email: email,
                     password: password,
+                    user_metadata: { userType: userType }
                     //user_metadata: { FirstName: ho.currentUser.FirstName, LastName: ho.currentUser.LastName, PropertyAddress: ho.currentUser.PropertyAddress }
                 }
             })

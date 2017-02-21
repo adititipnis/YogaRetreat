@@ -1,7 +1,7 @@
 ﻿(function () {
-    var MainModule = angular.module("MainModule", ["ui.router", "ngResource", "auth0"]);
+    var AuthModule = angular.module("AuthModule", ["ui.router", "ngResource", "auth0", "MainModule"]);
 
-    MainModule.config(function ($stateProvider, $urlRouterProvider, authProvider) {
+    AuthModule.config(function ($stateProvider, $urlRouterProvider, authProvider) {
 
         $urlRouterProvider.otherwise("/start");
 
@@ -13,22 +13,22 @@
 
         $stateProvider.state("homeOwner",
             {
-                templateUrl: "Views/HomeOwner.html",
+                templateUrl: "Views/Auth/HomeOwner.html",
                 controller: "HomeOwnerController",
                 controllerAs: "ho"
             });
 
         $stateProvider.state("instructor",
             {
-                templateUrl: "Views/Instructor.html",
-                controller: "InstructorController",
+                templateUrl: "Views/Auth/Instructor.html",
+                controller: "InstructorAuthController",
                 controllerAs: "inst"
             });
 
         $stateProvider.state("member",
             {
-                templateUrl: "Views/Member.html",
-                controller: "MemberController",
+                templateUrl: "Views/Auth/Member.html",
+                controller: "MemberAuthController",
                 controllerAs: "m"
             });
 
@@ -42,7 +42,7 @@
         authProvider.init({
             domain: "adititipnis.auth0.com",
             clientID: "xCURcvMJNaEAGE1biiljG85MOyT1Hq13",
-            callbackURL: "http://localhost:64828/Views/dashboard"
+            callbackURL: "http://localhost:64828/Views/Dashboard/dashboard"
         })
     })
     .run(function (auth) {
