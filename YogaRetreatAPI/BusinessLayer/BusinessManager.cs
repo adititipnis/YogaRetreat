@@ -22,5 +22,10 @@ namespace YogaRetreatAPI.BusinessLayer
         {
             DataAccessLayer.DataAccess.AddMember(member);
         }
+
+        public static HomeOwner GetHomeOwner(string email)
+        {
+            return DataAccessLayer.DataAccess.GetHomeOwner(email);
+        }
     }
 }

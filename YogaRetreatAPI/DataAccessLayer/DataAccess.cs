@@ -10,28 +10,36 @@ namespace YogaRetreatAPI.DataAccessLayer
     {
         public static void AddHomeOwner(HomeOwner homeOwner)
         {
-            using(var context = new Entities())
+            using(var context = new YogaRetreatEntities())
             {
-                context.HomeOwner.Add(homeOwner);
+                context.HomeOwners.Add(homeOwner);
                 context.SaveChanges();
             }
         }
 
         public static void AddInstructor(Instructor instructor)
         {
-            using (var context = new Entities())
+            using (var context = new YogaRetreatEntities())
             {
-                context.Instructor.Add(instructor);
+                context.Instructors.Add(instructor);
                 context.SaveChanges();
             }
         }
 
         public static void AddMember(Member member)
         {
-            using (var context = new Entities())
+            using (var context = new YogaRetreatEntities())
             {
-                context.Member.Add(member);
+                context.Members.Add(member);
                 context.SaveChanges();
+            }
+        }
+
+        public static HomeOwner GetHomeOwner(string email)
+        {
+            using (var context = new YogaRetreatEntities())
+            {
+                return context.HomeOwners.Single(ho => ho.Email == email);
             }
         }
     }

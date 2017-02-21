@@ -10,7 +10,6 @@ using YogaRetreatAPI.App_Data;
 
 namespace YogaRetreatAPI.Controllers
 {
-    [EnableCors(origins: "*", headers: "*", methods: "*")]
     public class HomeOwnerController : ApiController
     {
         [AcceptVerbs("GET")]
@@ -26,6 +25,11 @@ namespace YogaRetreatAPI.Controllers
             //HomeOwner homeOwner = new HomeOwner() { FirstName = name };
             BusinessLayer.BusinessManager.AddHomeOwner(homeOwner);
             return new HttpResponseMessage(HttpStatusCode.OK);
+        }
+
+        public HomeOwner Get(string email)
+        {
+            return BusinessLayer.BusinessManager.GetHomeOwner(email);
         }
     }
 }

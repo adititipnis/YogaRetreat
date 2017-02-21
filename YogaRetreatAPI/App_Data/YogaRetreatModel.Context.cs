@@ -13,10 +13,10 @@ namespace YogaRetreatAPI.App_Data
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
     
-    public partial class Entities : DbContext
+    public partial class YogaRetreatEntities : DbContext
     {
-        public Entities()
-            : base("name=Entities")
+        public YogaRetreatEntities()
+            : base("name=YogaRetreatEntities")
         {
         }
     
@@ -25,9 +25,8 @@ namespace YogaRetreatAPI.App_Data
             throw new UnintentionalCodeFirstException();
         }
     
-        public virtual DbSet<HomeOwner> HomeOwner { get; set; }
-        public virtual DbSet<Instructor> Instructor { get; set; }
-        public virtual DbSet<Member> Member { get; set; }
-        public virtual DbSet<UserPassword> UserPassword { get; set; }
+        public virtual DbSet<HomeOwner> HomeOwners { get; set; }
+        public virtual DbSet<Instructor> Instructors { get; set; }
+        public virtual DbSet<Member> Members { get; set; }
     }
 }
